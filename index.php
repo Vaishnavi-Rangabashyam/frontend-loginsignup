@@ -7,6 +7,7 @@ if(isset($_SESSION["id"])){
 else{
   header("Location: login.php");
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -29,7 +30,7 @@ else{
   <section class="container forms">
         <div class="form index">
             <div class="form-content">
-                <header style="text-align:center;">Welcome <?php echo $user["username"]; ?></header>
+                <header style="text-align:center;">Update Your Profile <?php echo $user["username"]; ?></header>
                         <!-- <a href="logout.php" style=>Logout</a> -->
                     <form autocomplete="off" action="" method="post" id="subForm">
                                <input type="hidden" id="action" value="index">
@@ -76,17 +77,10 @@ else{
                               <div class ="field input-field">
                                       <button type="button"  id="button" value="submit" onclick="submitData();">Submit</button>
                               </div>
-
-                           
-
                               
-
-                              
-                      <div class="form-link">
-                        <span>
-                          <a href="logout.php">Logout</a>
-                        </span>    
-                      </div>
+                              <div style="text-align:center;padding:10px;">
+                                   <a href="logout.php" style=>Logout</a>
+                               </div>
 
 
                     </form>
