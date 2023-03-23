@@ -122,18 +122,37 @@ function login(){
 
 if ($result->num_rows == 1){
   if($password == $data['password']){
-    echo "Login Successful";
+
     $_SESSION["login"] = true;
     $_SESSION["id"] =  $data["id"];
+    
+    if(!empty($data['firstname'])) {
+      // echo "Its Not Empty";
+     echo "Login Successfull! Redirected to Home Page";
+    // header("Location: home.php");
+     exit();
+    }
+    else {
+      echo "Login Successfull! Redirected to Index Page";      
+      exit();
+    }
+    
+    
   }
+  
   else{
       echo "Login Failed!";
       exit;
   }
-}elseif ($result->num_rows == 0){
+  
+
+}
+elseif ($result->num_rows == 0){
 
   echo "User Not Registered";
 }
+
+
 
 }
 
@@ -177,7 +196,7 @@ function  index(){
   //         gender    = '$gender'
   //         WHERE username = '$username'" ;
   //   mysqli_query($conn, $query);
-    echo "User data submitted Successfully";
+    echo "User data submitted Successfully!";
  }
  catch(mysqli_sql_exception $e)
  {
@@ -214,7 +233,7 @@ function  index(){
 
    if($collection -> insertOne($insert))
    {
-     echo "Document Inserted Successfully";
+    //  echo "Document Inserted Successfully";
    }
    else {
      echo "Some Issue";

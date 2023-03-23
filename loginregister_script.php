@@ -17,11 +17,26 @@
         type: 'post',
         data: data,
         success:function(response){
-          alert(response);
+          // alert(response);
           
-          if(response == "Login Successful"){
-            window.location.reload();
-          }
+          if(response == "Login Successfull! Redirected to Home Page"){
+            alert(response);
+            window.location = "home.php";
+
+            }
+
+            if(response == "Login Successfull! Redirected to Index Page"){
+              alert(response);
+              window.location = "index.php";
+
+            }
+            // if(response == "Login Successful"){
+            //   window.location = "index.php";
+            // }
+            // elseif (response == "Its Not Empty"){
+            //   window.location = "home.php";
+            // }
+            
         }
       });
     });

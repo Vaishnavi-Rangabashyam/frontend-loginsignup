@@ -45,20 +45,18 @@ if(isset($_SESSION["id"])){
                                           </div>
 
                                           <div class ="field input-field">
-                                                 <a href="index.php">
                                                    <button type="button"  id="button" onclick="submitData();">Login</button>
-                                                 </a>
                                           </div>
                     </form>
 
                          
 
 
-                      <div class="form-link">
+                    <div class="form-link">
                         <span>Don't have an account?
                           <a href="register.php">SignUp</a>
                         </span>    
-                      </div>
+                    </div>
             </div>    
 
                     <!-- <div class="line"></div>

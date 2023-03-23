@@ -1,9 +1,12 @@
 <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 </script>
 <script type="text/javascript">
+  
    function submitData() {
-            document.getElementById("subForm").submit();
-            
+     document.getElementById("button").addEventListener("click",submitData);
+    //  document.getElementById("subForm").addEventListener("click",Submit);
+    // window.location = "login.php";
+          
         
        
     $(document).ready(function()
@@ -25,14 +28,16 @@
               url: 'function.php',
               type: 'post',
               data: data1,
-              success: function(response)
+              success: function(response){
+                alert(response);
+                window.location = "home.php";
+              if(response == "User data submitted Successfully!")
               {
-              alert(response);
-              if(response == "User data submitted Successfully")
-              {
+                // alert(response);
                 // window.location.reload();
-                return alert("You Form Is not submitted");
+                 return alert("You Form Is not submitted");
               }
+              
               }
             });
             
